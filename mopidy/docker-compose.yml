@@ -1,0 +1,16 @@
+services:
+  mopidy:
+    image: dodoent/mopidy
+    container_name: mopidy
+    devices:
+      - /dev/snd:/dev/snd
+    ports:
+      - '6600:6600'
+      - '80:6680'
+    restart: always
+    volumes:
+      - ${LOCAL_ROOT}/config:/config
+    # TIDAL requires manual authentication on service startup
+    # environment:
+    #   - PIP_PACKAGES=Mopidy-Tidal
+    user: root

@@ -12,6 +12,6 @@ services:
       - ${LOCAL_ROOT}/config:/config
       - ${LOCAL_ROOT}/mopidy-home:/var/lib/mopidy
     # TIDAL requires manual authentication on service startup
-    # environment:
-    #   - PIP_PACKAGES=Mopidy-Tidal
+    environment:
+      - PIP_PACKAGES=Mopidy-Tidal
     user: root
